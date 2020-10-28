@@ -24,7 +24,7 @@ public class UniqueNumbers {
 
         for (int i = 0; i < numbers.length; i++) {
             boolean unique = true;
-            for (int j = i + 1; j < numbers.length; j++) {
+            for (int j = numbers.length - 1; j > i ; j--) {
                 if(numbers[i] == numbers [j]){
                     unique = false;
                     break;

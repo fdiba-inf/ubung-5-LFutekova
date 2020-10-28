@@ -22,16 +22,29 @@ public class UniqueNumbers {
 
         int uniqueIndex = 0;
 
-        for (int i = 0; i < numbers.length; i++) {
+        for (int number : numbers) {
             boolean unique = true;
-            for (int j = numbers.length - 1; j > i ; j--) {
+            /*for (int j = numbers.length - 1; j > i ; j--) {
                 if(numbers[i] == numbers [j]){
                     unique = false;
                     break;
                 }
+            }*/
+            for (int j = 0; j <= uniqueIndex; j++) {
+                if (number == uniqueNumbers[j] && number != 0) {
+                    unique = false;
+                    break;
+                } else if (number == 0) {
+                    for (int k = 0; k < j; k++) {
+                        if (uniqueNumbers[k] == 0) {
+                            unique = false;
+                            break;
+                        }
+                    }
+                }
             }
-            if(unique){
-                uniqueNumbers[uniqueIndex] = numbers[i];
+            if (unique) {
+                uniqueNumbers[uniqueIndex] = number;
                 uniqueIndex++;
             }
         }

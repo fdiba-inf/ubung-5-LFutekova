@@ -24,12 +24,18 @@ public class UniqueNumbers {
 
         for (int number : numbers) {
             boolean unique = true;
+            //Verification within the original array.
+            //Orders by last instance.
             /*for (int j = numbers.length - 1; j > i ; j--) {
                 if(numbers[i] == numbers [j]){
                     unique = false;
                     break;
                 }
             }*/
+
+            //Verification with new array.
+            //Orders by first instance.
+            //Must have an additional check for 0 due to the default values in the new array.
             for (int j = 0; j <= uniqueIndex; j++) {
                 if (number == uniqueNumbers[j] && number != 0) {
                     unique = false;

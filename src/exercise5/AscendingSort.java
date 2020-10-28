@@ -18,6 +18,19 @@ public class AscendingSort {
         }
 
         // Sort numbers in ascending order
+        for (int i = 1; i < numbers.length; i++) {
+
+            int elementIndex = i;
+
+            for (int j = i - 1; j >= 0; j--) {
+                if(numbers[elementIndex] < numbers[j]){
+                    int temp = numbers[j];
+                    numbers[j] = numbers[elementIndex];
+                    numbers[elementIndex] = temp;
+                    elementIndex = j;
+                }
+            }
+        }
 
         String numbersAsString = Arrays.toString(numbers);
         System.out.println("Sorted numbers: " + numbersAsString);

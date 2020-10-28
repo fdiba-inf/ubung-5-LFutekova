@@ -20,6 +20,22 @@ public class UniqueNumbers {
         int[] uniqueNumbers = new int[numbers.length];
         // Find unique numbers in numbers
 
+        int uniqueIndex = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+            boolean unique = true;
+            for (int j = i + 1; j < numbers.length; j++) {
+                if(numbers[i] == numbers [j]){
+                    unique = false;
+                    break;
+                }
+            }
+            if(unique){
+                uniqueNumbers[uniqueIndex] = numbers[i];
+                uniqueIndex++;
+            }
+        }
+
         String uniqueNumbersAsString = Arrays.toString(uniqueNumbers);
         System.out.println("Unique numbers: " + uniqueNumbersAsString);
     }
